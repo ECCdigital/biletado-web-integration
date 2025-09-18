@@ -1,0 +1,128 @@
+.bm-bookable-list .booking-manager-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.bm-bookable-list .cover-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bm-bookable-list .bt-room, .bm-bookable-list .bt-ticket, .bm-bookable-list .bt-event-location, .bm-bookable-list .bt-resource {
+    border: solid 1px lightgray;
+    border-radius: 4px;
+    display: flex;        
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+.bm-bookable-list h4 {
+    padding: 10px 15px;
+    margin: 0;
+}
+
+.bm-bookable-list .bt-room > p, .bm-bookable-list .bt-ticket > p, .bm-bookable-list .bt-event-location > p, .bm-bookable-list .bt-resource > p {
+    padding: 0 15px;
+    margin: 0;
+}
+
+.bm-bookable-list .bt-room:not(:has(img))::before, .bm-bookable-list .bt-ticket:not(:has(img))::before, .bm-bookable-list .bt-event-location:not(:has(img))::before, .bm-bookable-list .bt-resource:not(:has(img))::before {
+    content: '';
+    background: #efefef;
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+
+.bm-bookable-list .flags {
+    list-style: none;
+    padding: 20px 15px;
+    margin: 0;
+
+}
+
+.bm-bookable-list .flag {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.bm-bookable-list .flag::before {
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 5 Free'; /* Ensure the correct font is used */
+    font-weight: 900; /* Necessary for some icons in Font Awesome */
+    position: absolute;
+    left: 0;
+    color: #1A7387;
+}
+
+.bm-bookable-list .btn-booking {
+    padding: 5px 20px;
+    background-color: #1A7387;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.bm-bookable-list .btn-booking:hover {
+    background-color: #01AEC9;
+    /*color: #000;*/
+}
+
+
+.bm-bookable-list .flags {
+    flex-grow: 1;
+}
+
+.bm-bookable-list .price {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.bm-bookable-list .bt-room:not(:has(.flags)) .description, .bm-bookable-list .bt-ticket:not(:has(.flags)) .description, .bm-bookable-list .bt-event-location:not(:has(.flags)) .description, .bm-bookable-list .bt-resource:not(:has(.flags)) .description {
+    flex-grow: 1;
+}
+
+.bm-bookable-list .type, .bm-bookable-list .btn-detail, .bm-bookable-list .autoCommitBooking {
+    display: none;
+}
+
+.bm-occupancy-calendar .fc-button-primary {
+    background-color: #1A7387 !important;
+    border-color: #1A7387 !important;
+}
+
+.bm-bookable-list .price-category-list {
+    list-style: none;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.bm-bookable-list .price-category-list li {
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    .bm-bookable-list {
+        display: grid;
+        gap: 1rem; 
+    }
+    
+    .bm-bookable-list .booking-manager-list {
+        display: grid;
+        gap: 1rem; 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .bm-bookable-list .booking-manager-list {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
